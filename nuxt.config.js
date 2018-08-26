@@ -11,16 +11,43 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBzaWLCk6WZFC4YtQLHaeR5BgvdsWR0j64&libraries=places'
+      }
     ]
   },
   /*
   ** Customize the progress bar color
   */
+  plugins: [
+    {
+      src: '~/plugins/gm-autocomplete',
+      ssr: false
+    },
+    {
+      src: '~/plugins/local-storage',
+      ssr: false
+    },
+    {
+      src: '~/plugins/browser-geolocation',
+      ssr: false
+    },
+    {
+      src: '~/plugins/moment',
+      ssr: false
+    }
+  ],
+  modules: [
+    'bootstrap-vue/nuxt'
+  ],
   loading: { color: '#3B8070' },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
@@ -34,6 +61,8 @@ module.exports = {
         })
       }
     }
+  },
+  env: {
+    API_KEY_OPENWEATHERMAP: 'c5421e881cf9db203db2ec7c7b247138'
   }
 }
-
