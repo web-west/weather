@@ -42,7 +42,7 @@ module.exports = {
   modules: [
     'bootstrap-vue/nuxt'
   ],
-  loading: { color: '#3B8070' },
+  loading: { color: 'red' },
   /*
   ** Build configuration
   */
